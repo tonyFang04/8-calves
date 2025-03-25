@@ -14,7 +14,7 @@ This dataset provides:
 - Designed to evaluate robustness in occlusion handling, identity preservation, and temporal consistency.
 
 
-![Dataset Example Frame](dataset_screenshot.png)  
+<img src="dataset_screenshot.png" alt="Dataset Example Frame" width="50%" /> 
 *Example frame with bounding boxes (green) and calf identities. Challenges include occlusion, motion blur, and pose variation.*
 
 ---
