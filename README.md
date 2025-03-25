@@ -55,3 +55,33 @@ upload/
 import pandas as pd
 df = pd.read_pickle("pmfeed_4_3_16_bboxes_and_labels.pkl")
 ```
+
+## Usage
+### Object Detection
+- Use `hand_labelled_frames/` (900 hand-annotated frames) for training/validation
+- Test on the full video sequence using `pmfeed_4_3_16_bboxes_and_labels.pkl`
+
+### Identity Classification
+- Use `tracklet_id` (1-8) in the PKL file as ground truth labels
+
+### Multi-Object Tracking
+- Leverage temporal continuity via `frame_id` column
+
+## License
+This dataset is released under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).  
+*Modifications/redistribution must include attribution.*
+
+## Citation
+```bibtex
+@article{fang20248calves,
+  title={8-Calves: A Benchmark for Object Detection and Identity Classification in Occlusion-Rich Environments},
+  author={Fang, Xuyang and Hannuna, Sion and Campbell, Neill},
+  journal={arXiv preprint arXiv:2503.13777},
+  year={2024}
+}
+```
+
+## Contact
+**Dataset Maintainer**:  
+Xuyang Fang  
+Email: [xf16910@bristol.ac.uk](mailto:xf16910@bristol.ac.uk)  
