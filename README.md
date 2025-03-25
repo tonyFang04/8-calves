@@ -62,14 +62,46 @@ df = pd.read_pickle("pmfeed_4_3_16_bboxes_and_labels.pkl")
 
 ## Usage
 ### Object Detection
-- Use `hand_labelled_frames/` (900 hand-annotated frames) for training/validation
-- Test on the full video sequence using `pmfeed_4_3_16_bboxes_and_labels.pkl`
+- **Training/Validation**: Use the first 600 frames from `hand_labelled_frames/` (chronological split).  
+- **Testing**: Evaluate on the full video (`pmfeed_4_3_16.avi`) using the provided PKL annotations.  
+- ⚠️ **Avoid Data Leakage**: Do not use all 900 frames for training - they are temporally linked to the test video.  
+
+**Recommended Split**:  
+| Split      | Frames | Purpose          |  
+|------------|--------|------------------|  
+| Training   | 500    | Model training   |  
+| Validation | 100    | Hyperparameter tuning |  
+| Test       | 67,760 | Final evaluation |  
 
 ### Identity Classification
-- Use `tracklet_id` (1-8) in the PKL file as ground truth labels
+- Use `tracklet_id` (1-8) from the PKL file as labels.  
+- **Temporal Split**: 30% train / 30% val / 40% test (chronological order).  
 
-### Multi-Object Tracking
-- Leverage temporal continuity via `frame_id` column
+## Key Results
+
+### Object Detection (YOLO Models)
+| Model       | Parameters (M) | mAP50:95 (%) | Inference Speed (ms/sample) |
+|-------------|----------------|--------------|-----------------------------|
+| **YOLOv9c** | 25.6           | **68.4**     | 2.8                         |
+| YOLOv8x     | 68.2           | 68.2         | 4.4                         |
+| YOLOv10n    | 2.8            | 64.6         | 0.7                         |
+
+---
+
+### Identity Classification (Top Models)
+| Model          | Accuracy (%) | KNN Top-1 (%) | Parameters (M) |
+|----------------|--------------|---------------|----------------|
+| **ConvNextV2-Nano** | 73.1      | 50.8          | 15.6           |
+| Swin-Tiny      | 68.7         | 43.9          | 28.3           |
+| ResNet50       | 63.7         | 38.3          | 25.6           |
+
+---
+
+**Notes**:
+- **mAP50:95**: Mean Average Precision at IoU thresholds 0.5–0.95.  
+- **KNN Top-1**: Nearest-neighbor accuracy using embeddings.  
+- Full results and methodology: [arXiv paper](https://arxiv.org/abs/2503.13777). 
+
 
 ## License
 This dataset is released under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).  
