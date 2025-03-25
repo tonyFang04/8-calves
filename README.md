@@ -13,6 +13,10 @@ This dataset provides:
 - 🖼️ **900 hand-labeled static frames** for detection tasks
 - Designed to evaluate robustness in occlusion handling, identity preservation, and temporal consistency.
 
+
+![Dataset Example Frame](dataset_screenshot.png)  
+*Example frame with bounding boxes (green) and calf identities. Challenges include occlusion, motion blur, and pose variation.*
+
 ---
 
 ## Key Features
