@@ -33,13 +33,7 @@ Download the dataset:
 
 upload/
 
-├── hand_labelled_frames/ # 900 manually annotated frames
-
-│ ├── images/ # Raw frames (600x800)
-
-│ └── labels/ # YOLO labels (class=0 for cows)
-
-│
+├── hand_labelled_frames/ # 900 manually annotated frames and labels in YOLO format, class=0 for cows
 
 ├── pmfeed_4_3_16.avi # 1-hour video (4th March 2016)
 
