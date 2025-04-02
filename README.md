@@ -29,19 +29,17 @@ This dataset provides:
 
 ---
 
+## Dataset Download
+The **8-Calves Dataset** is available on Hugging Face 🤗.  
+You can access it here: [https://huggingface.co/datasets/tonyFang04/8-calves](https://huggingface.co/datasets/tonyFang04/8-calves).
+
 ## Dataset Structure
-Download the dataset:  
-[📥 OneDrive Link](https://uob-my.sharepoint.com/:u:/g/personal/xf16910_bristol_ac_uk/EUUfvrF4Qr5Or61xn0hoA7EB8cU7W9aZ1-8NuJ_po7cwrQ?e=56hFC6)
 
-**ZIP Contents**:
+hand_labelled_frames/ # 900 manually annotated frames and labels in YOLO format, class=0 for cows
 
-upload/
+pmfeed_4_3_16.avi # 1-hour video (4th March 2016)
 
-├── hand_labelled_frames/ # 900 manually annotated frames and labels in YOLO format, class=0 for cows
-
-├── pmfeed_4_3_16.avi # 1-hour video (4th March 2016)
-
-└── pmfeed_4_3_16_bboxes_and_labels.pkl # Temporal annotations
+pmfeed_4_3_16_bboxes_and_labels.pkl # Temporal annotations
 
 
 ### Annotation Details
